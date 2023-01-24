@@ -1,5 +1,5 @@
 
 jobs:  
 - job  : terraform_ci
-steps: 
-- template: terraform-template
+  steps: 
+  - template: terraform-template
