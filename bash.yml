@@ -1,0 +1,68 @@
+trigger: none
+pool: agent-01
+parameters:
+- name: provisionType
+  type: string
+  default: Apply
+  values:
+    - Apply
+    - Destroy
+variables:
+- group: mygroup
+steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+- script: |
+        wget -qO - terraform.gpg https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/terraform-archive-keyring.gpg
+        sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/terraform-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/terraform.list
+        sudo apt update
+        sudo apt install terraform
+        terraform --version
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+  displayName: Install Terraform
+- bash: |
+      set -eux  # fail on error
+      az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
+      subscriptionId=$(az account show --query id -o tsv)
+      terraform init \
+        -backend-config=storage_account_name=$(TerraformBackendStorageAccount) \
+        -backend-config=container_name=$(TerraformBackendStorageContainer) \
+        -backend-config=key=dev.tfstate \
+        -backend-config=resource_group_name=$(TerraformBackendResourceGroup) \
+        -backend-config=subscription_id="$ARM_SUBSCRIPTION_ID" \
+        -backend-config=tenant_id="$ARM_TENANT_ID" \
+        -backend-config=client_id="$ARM_CLIENT_ID" \
+        -backend-config=client_secret="$ARM_CLIENT_SECRET"
+  displayName: 'Terraform Init'
+  workingDirectory: $(System.DefaultWorkingDirectory)
+  enabled: true
+  env:
+    ARM_CLIENT_ID: $(servicePrincipalId)
+    ARM_CLIENT_SECRET: $(servicePrincipalKey)
+    ARM_TENANT_ID: $(tenantId)
+    ARM_SUBSCRIPTION_ID: $(subscriptionId)
+- bash: |
+      az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID --allow-no-subscriptions
+      terraform plan
+      terraform apply -input=false -auto-approve
+      displayName:'Terraform ${{ parameters.provisionType }}'
+      condition: eq('${{ parameters.provisionType }}', 'Apply')
+      workingDirectory: $(System.DefaultWorkingDirectory)
+      env:
+        ARM_CLIENT_ID: $(servicePrincipalId)
+        ARM_CLIENT_SECRET: $(servicePrincipalKey)
+        ARM_TENANT_ID: $(tenantId)
+        ARM_SUBSCRIPTION_ID: $(subscriptionId)
+     
+- bash: |
+     az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
+     terraform destroy -input=false -auto-approve
+  displayName: 'Terraform ${{ parameters.provisionType }}'
+  condition: eq('${{ parameters.provisionType }}', 'Destroy')
+  workingDirectory: $(System.DefaultWorkingDirectory)
+  env:
+    ARM_CLIENT_ID: $(servicePrincipalId)
+    ARM_CLIENT_SECRET: $(servicePrincipalKey)
+    ARM_TENANT_ID: $(tenantId)
+    ARM_SUBSCRIPTION_ID: $(subscriptionId)     
