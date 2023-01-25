@@ -28,9 +28,10 @@
   steps: 
   - template: terraformCI-template-step.yml
     parameters: 
+      serviceARM: ${{ parameters.serviceARM }}
       rmkey: ${{ parameters.rmkey }}
       service: ${{ parameters.service }}
       container_name: ${{ parameters.container_name }}
       acc_name: ${{ parameters.acc_name }}
       group_name: ${{ parameters.group_name }}
-      serviceARM: ${{ parameters.serviceARM }}
+      
