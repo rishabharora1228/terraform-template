@@ -1,10 +1,5 @@
-  parameters:
-  - name: rmkey
-    displayName: backendAzureRmKey
-    type: string
-    default: 'terraform.tfstate'
-    values:
-    - backup.tfstate
+ parameters: 
+      rmkey: terraform.tfvars
   
   steps:
   
