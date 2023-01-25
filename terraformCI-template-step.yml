@@ -1,5 +1,7 @@
- parameters: 
-      rmkey: terraform.tfvars
+  parameters:
+  - name: rmkey
+    type: string
+
   
   steps:
   
