@@ -2,3 +2,5 @@
   trigger: none
   steps: 
   - template: terraformCI-template-step.yml
+    parameters: 
+      rmkey: 'terraform.tfvars'
