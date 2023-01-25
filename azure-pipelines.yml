@@ -3,4 +3,4 @@
   steps: 
   - template: terraformCI-template-step.yml
     parameters: 
-      rmkey: 'terraform.tfvars'
+      rmkey: terraform.tfvars
