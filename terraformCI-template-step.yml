@@ -1,12 +1,10 @@
-#   parameters:
-#   - name: version
-#     displayName: Terraform version
-#     type: string
-#     default: 'latest'
-#     values:
-#     - 1.3.6
-#     - 1.3.5
-#     - 1.1
+  parameters:
+  - name: key
+    displayName: backendAzureRmKey
+    type: string
+    default: 'terraform.tfstate'
+    values:
+    - backup.tfstate
   
   steps:
   
@@ -24,7 +22,7 @@
       backendAzureRmResourceGroupName: 'ot-test'
       backendAzureRmStorageAccountName: 'terra139'
       backendAzureRmContainerName: 'terraform'
-      backendAzureRmKey: 'terraform.tfstate'
+      backendAzureRmKey: ${{ parameters.key }}
   - task: TerraformTaskV3@3
     displayName: Validate
     inputs:
