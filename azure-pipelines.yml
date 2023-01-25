@@ -2,9 +2,7 @@
   - name: rmkey
     displayName: backendAzureRmKey
     type: string
-    default: 'terraform.tfstate'
-    values:
-    - backup.tfstate
+   
   trigger: none
   steps: 
   - template: terraformCI-template-step.yml
