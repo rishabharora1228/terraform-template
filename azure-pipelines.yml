@@ -2,6 +2,7 @@
   - name: rmkey
     displayName: backendAzureRmKey
     type: string
+    default: terraform.tfstate
    
   trigger: none
   steps: 
