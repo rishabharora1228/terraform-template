@@ -2,7 +2,7 @@
   - name: rmkey
     displayName: backendAzureRmKey
     type: string
-#     default: 'terraform.tfstate'
+    default: 'terraform.tfstate'
     values:
     - backup.tfstate
     - terraform.tfstate
