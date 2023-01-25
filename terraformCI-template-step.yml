@@ -13,7 +13,7 @@
   - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
     displayName: Terraform installation
     inputs:
-         terraformVersion: ${{ parameters.version }}
+         terraformVersion: 'latest'
         
   - task: TerraformTaskV3@3
     displayName: Terraform init  
