@@ -1,9 +1,10 @@
-  rmkey: 
-  service:
-  container_name:
-  acc_name: 
-  group_name:
-  serviceARM: 
+  parameters:
+    rmkey: 
+    service:
+    container_name:
+    acc_name: 
+    group_name:
+    serviceARM: 
 
     
    
