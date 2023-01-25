@@ -16,7 +16,7 @@
       backendAzureRmResourceGroupName: 'ot-test'
       backendAzureRmStorageAccountName: 'terra139'
       backendAzureRmContainerName: 'terraform'
-      backendAzureRmKey: 'terraform.tfstate'
+      backendAzureRmKey: ${{ parameters.key }}
   - task: TerraformTaskV3@3
     displayName: Validate
     inputs:
