@@ -3,6 +3,18 @@
     type: string
   - name: service
     type: string
+  - name: container_name
+    type: string
+  - name: acc_name
+    type: string
+  - name: group_name
+    type: string
+  - name: serviceARM
+    type: string
+    
+    
+   
+
 
   
   steps:
