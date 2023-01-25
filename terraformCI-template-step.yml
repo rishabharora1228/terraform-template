@@ -29,10 +29,10 @@
     inputs:
       provider: 'azurerm'
       command: 'init'
-      backendServiceArm: 'ot-microservices'
-      backendAzureRmResourceGroupName: 'ot-test'
-      backendAzureRmStorageAccountName: 'terra139'
-      backendAzureRmContainerName: 'terraform'
+      backendServiceArm: ${{ parameters.serviceARM }}
+      backendAzureRmResourceGroupName: ${{ parameters.group_name }}
+      backendAzureRmStorageAccountName: ${{ parameters.acc_name }}
+      backendAzureRmContainerName: ${{ parameters.container_name }}
       backendAzureRmKey: ${{ parameters.rmkey }}
   - task: TerraformTaskV3@3
     displayName: Validate
