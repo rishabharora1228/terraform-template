@@ -1,9 +1,9 @@
-  parameters:
-  - name: key
-    displayName: backendAzureRmKey
-    type: string
-    default: 'terraform.tfstate'
-    values:
-    - backup.tfstate
+#   parameters:
+#   - name: key
+#     displayName: backendAzureRmKey
+#     type: string
+#     default: 'terraform.tfstate'
+#     values:
+#     - backup.tfstate
   steps: 
   - template: terraformCI-template-step.yml
