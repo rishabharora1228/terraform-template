@@ -3,9 +3,14 @@
     displayName: backendAzureRmKey
     type: string
     default: terraform.tfstate
+  - name: service
+    displayName: environmentServiceNameAzureRM
+    type: string
+    default: Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
    
   trigger: none
   steps: 
   - template: terraformCI-template-step.yml
     parameters: 
       rmkey: ${{ parameters.rmkey }}
+      service: ${{ parameters.service }}
