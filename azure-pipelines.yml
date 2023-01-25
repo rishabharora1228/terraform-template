@@ -5,6 +5,7 @@
     default: 'terraform.tfstate'
     values:
     - backup.tfstate
+    - terraform.tfstate
   trigger: none
   steps: 
   - template: terraformCI-template-step.yml
