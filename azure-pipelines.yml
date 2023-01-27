@@ -28,7 +28,7 @@
 #     - paid version
 
   resources:
-  repositories:
+   repositories:
     - repository: parameter_repo 
       type: github
       name: terraform-template/parameters.yml
