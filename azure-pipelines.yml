@@ -27,8 +27,8 @@
 #     - Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
 #     - paid version
 
-parameters:
-- template: parameters.yml
+  parameters:
+  - template: parameters.yml
 
   trigger: none
   steps: 
