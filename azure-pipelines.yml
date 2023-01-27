@@ -27,7 +27,7 @@
 #     - Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
 #     - paid version
 
- resources:
+  resources:
    repositories:
    - repository: parameter_repo
      type: github
