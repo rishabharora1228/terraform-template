@@ -29,9 +29,9 @@
 
   resources:
    repositories:
-   - repository: parameter_repo
+   - repository: rishabharora1228/terraform-template
      type: github
-     name: rishabharora1228/terraform-template
+     name: parameters
      ref: main
 
   trigger: none
