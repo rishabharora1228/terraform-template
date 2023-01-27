@@ -1,0 +1,28 @@
+  parameters:
+  - name: serviceARM
+    displayName: backendServiceArm
+    type: string
+    default: ot-microservices  
+  - name: group_name
+    displayName: backendAzureRmResourceGroupName
+    type: string
+    default: ot-test
+  - name: acc_name
+    displayName: backendAzureRmStorageAccountName
+    type: string
+    default: terra139
+  - name: container_name
+    displayName: backendAzureRmContainerName
+    type: string
+    default: terraform    
+  - name: rmkey
+    displayName: backendAzureRmKey
+    type: string
+    default: terraform.tfstate
+  - name: service
+    displayName: environmentServiceNameAzureRM
+    type: string
+    default: 
+    values:
+    - Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
+    - paid version
