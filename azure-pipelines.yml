@@ -1,28 +1,28 @@
   parameters:
-  - name: rmkey
-    displayName: backendAzureRmKey
+  - name: serviceARM
+    displayName: backendServiceArm
     type: string
-    default: terraform.tfstate
-  - name: service
-    displayName: environmentServiceNameAzureRM
-    type: string
-    default: Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
-  - name: container_name
-    displayName: backendAzureRmContainerName
-    type: string
-    default: terraform
-  - name: acc_name
-    displayName: backendAzureRmStorageAccountName
-    type: string
-    default: terra139
+    default: ot-microservices  
   - name: group_name
     displayName: backendAzureRmResourceGroupName
     type: string
     default: ot-test
-  - name: serviceARM
-    displayName: backendServiceArm
+  - name: acc_name
+    displayName: backendAzureRmStorageAccountName
     type: string
-    default: ot-microservices 
+    default: terra139
+  - name: container_name
+    displayName: backendAzureRmContainerName
+    type: string
+    default: terraform    
+  - name: rmkey
+    displayName: backendAzureRmKey
+    type: string
+    default: terraform.tfstate
+ - name: service
+    displayName: environmentServiceNameAzureRM
+    type: string
+    default: Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
    
   trigger: none
   steps: 
