@@ -32,7 +32,7 @@
     - repository: parameter_repo 
       type: github
       name: rishabharora1228/terraform-template/parameters.yml
-      endpoint: rishabharora1228
+      endpoint: ot-microservices
 
   trigger: none
   steps: 
