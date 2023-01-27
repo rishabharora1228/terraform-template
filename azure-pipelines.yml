@@ -22,8 +22,9 @@
   - name: service
     displayName: environmentServiceNameAzureRM
     type: string
-    default: Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
+    default: 
     values:
+    - Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
     - paid version
    
   trigger: none
