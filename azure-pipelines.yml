@@ -44,5 +44,5 @@
       container_name: ${{ parameters.container_name }}
       acc_name: ${{ parameters.acc_name }}
       group_name: ${{ parameters.group_name }}
-    - checkout: parameter_repo  
+  - checkout: parameter_repo  
       
