@@ -27,12 +27,12 @@
 #     - Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
 #     - paid version
 
-  resources:
-   repositories:
-   - repository: parameter_repo
-     type: github
-     name: rishabharora1228/terraform-template
-     ref: main
+#   resources:
+#    repositories:
+#    - repository: parameter_repo
+#      type: github
+#      name: rishabharora1228/terraform-template
+#      ref: main
 
   trigger: none
   steps: 
@@ -44,5 +44,5 @@
       container_name: ${{ parameters.container_name }}
       acc_name: ${{ parameters.acc_name }}
       group_name: ${{ parameters.group_name }}
-  - checkout: parameter_repo  
+#   - checkout: parameter_repo  
       
