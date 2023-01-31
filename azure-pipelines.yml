@@ -24,8 +24,9 @@
     type: string
     default: 
     values:
+    - Free Trial(c70fbfa3-77ff-4651-ab13-05b836eef3f7)
     - Free Trial(5ff7175a-050e-4ea4-b68a-1561ca20211b)
-    - paid version
+    
 
 
 
