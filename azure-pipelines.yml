@@ -2,19 +2,19 @@
   - name: serviceARM
     displayName: backendServiceArm
     type: string
-    default: packer
+    default: 
   - name: group_name
     displayName: backendAzureRmResourceGroupName
     type: string
-    default: packer-resources
+    default: 
   - name: acc_name
     displayName: backendAzureRmStorageAccountName
     type: string
-    default: packerstorage16
+    default: 
   - name: container_name
     displayName: backendAzureRmContainerName
     type: string
-    default: packer-container   
+    default:    
   - name: rmkey
     displayName: backendAzureRmKey
     type: string
@@ -22,7 +22,7 @@
   - name: service
     displayName: environmentServiceNameAzureRM
     type: string
-    default: Free Trial(c70fbfa3-77ff-4651-ab13-05b836eef3f7)
+    default: 
     
     
     
