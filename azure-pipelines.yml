@@ -2,7 +2,7 @@
   - name: serviceARM
     displayName: backendServiceArm
     type: string
-    default: new  
+    default: packer
   - name: group_name
     displayName: backendAzureRmResourceGroupName
     type: string
