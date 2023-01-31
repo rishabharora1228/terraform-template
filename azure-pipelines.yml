@@ -22,7 +22,7 @@
   - name: service
     displayName: environmentServiceNameAzureRM
     type: string
-    default: 
+    default: c70fbfa3-77ff-4651-ab13-05b836eef3f7
     values:
     - Free Trial(c70fbfa3-77ff-4651-ab13-05b836eef3f7)
     
